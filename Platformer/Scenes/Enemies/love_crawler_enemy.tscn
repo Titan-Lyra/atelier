@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://w6o14l6ic2d0"]
+
+[ext_resource type="PackedScene" uid="uid://cwujo581smil0" path="res://Scenes/Enemies/spooky_crawler_enemy.tscn" id="1_yoxsu"]
+[ext_resource type="Texture2D" uid="uid://dvokyr3l8t6r6" path="res://Assets/Custom/Love/Vijand_2.png" id="2_dglwi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7ls8"]
+atlas = ExtResource("2_dglwi")
+region = Rect2(0, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rl70"]
+atlas = ExtResource("2_dglwi")
+region = Rect2(700, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0t8n"]
+atlas = ExtResource("2_dglwi")
+region = Rect2(1400, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq47m"]
+atlas = ExtResource("2_dglwi")
+region = Rect2(2100, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftph4"]
+atlas = ExtResource("2_dglwi")
+region = Rect2(2800, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26fd2"]
+atlas = ExtResource("2_dglwi")
+region = Rect2(3500, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0mqw"]
+atlas = ExtResource("2_dglwi")
+region = Rect2(4200, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5dp2"]
+atlas = ExtResource("2_dglwi")
+region = Rect2(4900, 0, 700, 700)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_546mt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7ls8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rl70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0t8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq47m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftph4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26fd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0mqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5dp2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yoxsu"]
+size = Vector2(30.25, 65.5)
+
+[node name="CrawlerEnemy" instance=ExtResource("1_yoxsu")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(9, -5)
+sprite_frames = SubResource("SpriteFrames_546mt")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_yoxsu")
+
+[node name="Hitbox" parent="." index="2"]
+position = Vector2(0, 8)
+
+[node name="Marker2D" parent="." index="4"]
+position = Vector2(0, 23)

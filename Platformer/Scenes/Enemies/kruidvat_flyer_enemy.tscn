@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://btx1barnscy8g"]
+
+[ext_resource type="PackedScene" uid="uid://dokpyixbjjtik" path="res://Scenes/Enemies/spooky_flyer_enemy.tscn" id="1_hjwtd"]
+[ext_resource type="Texture2D" uid="uid://b3pwtt0xeo78g" path="res://Assets/Custom/Kruidvat/Vijand_vliegend.png" id="2_ub1p8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a2bg"]
+atlas = ExtResource("2_ub1p8")
+region = Rect2(0, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe0u6"]
+atlas = ExtResource("2_ub1p8")
+region = Rect2(700, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_teuq8"]
+atlas = ExtResource("2_ub1p8")
+region = Rect2(1400, 0, 700, 700)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k25fl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a2bg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe0u6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_teuq8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FlyerEnemy" instance=ExtResource("1_hjwtd")]
+
+[node name="AnimatedSprite2D" parent="." index="3"]
+position = Vector2(-7.62939e-06, -9)
+scale = Vector2(0.132143, 0.163052)
+sprite_frames = SubResource("SpriteFrames_k25fl")

@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://dexm2pu4k1dim"]
+
+[ext_resource type="PackedScene" uid="uid://w6o14l6ic2d0" path="res://Scenes/Enemies/love_crawler_enemy.tscn" id="1_0oi8i"]
+[ext_resource type="Texture2D" uid="uid://cn756u3pco0tx" path="res://Assets/Custom/Love/Vijand_1.png" id="2_iodr8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xu6v"]
+atlas = ExtResource("2_iodr8")
+region = Rect2(0, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmyaa"]
+atlas = ExtResource("2_iodr8")
+region = Rect2(700, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cca7q"]
+atlas = ExtResource("2_iodr8")
+region = Rect2(1400, 0, 700, 700)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oe13j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xu6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmyaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cca7q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CrawlerEnemy" instance=ExtResource("1_0oi8i")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(8, -13)
+sprite_frames = SubResource("SpriteFrames_oe13j")
+
+[node name="Marker2D" parent="." index="4"]
+position = Vector2(-2, 26)

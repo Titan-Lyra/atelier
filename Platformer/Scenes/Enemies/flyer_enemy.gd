@@ -1,7 +1,11 @@
-extends Enemy
+class_name FlyerEnemy extends Enemy
 
 @onready var player_in_sight = false
 var player : Player
+var start_pos: Vector2
+
+func _ready() -> void:
+	start_pos = position
 
 func handle_physics(_delta):
 	if player_in_sight:
@@ -22,3 +26,6 @@ func _on_target_range_body_exited(body):
 	if body.is_in_group("player"):
 		player_in_sight = false
 	pass # Replace with function body.
+
+func hit():
+	position = start_pos

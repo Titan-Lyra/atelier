@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://dokpyixbjjtik"]
+
+[ext_resource type="PackedScene" uid="uid://bhgdgjy2jxwjs" path="res://Scenes/Enemies/flyer_enemy.tscn" id="1_4e5dp"]
+[ext_resource type="Texture2D" uid="uid://113l1ft333ip" path="res://Assets/Custom/Spooky/Enemy flying.png" id="2_jundq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2yok"]
+atlas = ExtResource("2_jundq")
+region = Rect2(0, 466, 350, 233)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov5hi"]
+atlas = ExtResource("2_jundq")
+region = Rect2(350, 466, 350, 233)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yc4s2"]
+atlas = ExtResource("2_jundq")
+region = Rect2(700, 466, 350, 233)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v05iy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2yok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov5hi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yc4s2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FlyerEnemy" instance=ExtResource("1_4e5dp")]
+
+[node name="AnimatedSprite2D" parent="." index="3"]
+position = Vector2(2, -1)
+scale = Vector2(0.36, 0.444206)
+sprite_frames = SubResource("SpriteFrames_v05iy")
+frame_progress = 0.0

@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://0l6y6ny6igcy"]
+
+[ext_resource type="PackedScene" uid="uid://dexm2pu4k1dim" path="res://Scenes/Enemies/love_crawler_enemy2.tscn" id="1_rqy0m"]
+[ext_resource type="Texture2D" uid="uid://bjao7jhkkt8te" path="res://Assets/Custom/Kruidvat/Vijand_lopend.png" id="2_xnnst"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvaib"]
+atlas = ExtResource("2_xnnst")
+region = Rect2(0, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcovf"]
+atlas = ExtResource("2_xnnst")
+region = Rect2(700, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkg7m"]
+atlas = ExtResource("2_xnnst")
+region = Rect2(1400, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lung"]
+atlas = ExtResource("2_xnnst")
+region = Rect2(2100, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp346"]
+atlas = ExtResource("2_xnnst")
+region = Rect2(2800, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxrkl"]
+atlas = ExtResource("2_xnnst")
+region = Rect2(3500, 0, 700, 700)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_frgyt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvaib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcovf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkg7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lung")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fp346")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxrkl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CrawlerEnemy" instance=ExtResource("1_rqy0m")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(9, -8)
+sprite_frames = SubResource("SpriteFrames_frgyt")
+
+[node name="Hitbox" parent="." index="2"]
+position = Vector2(0, 0)
+
+[node name="WallCast" parent="." index="3"]
+position = Vector2(0, 0)
+
+[node name="Marker2D" parent="." index="4"]
+position = Vector2(-4, 26)

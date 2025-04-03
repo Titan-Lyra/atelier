@@ -99,6 +99,9 @@ func take_hit(hitter):
 	player_lost_health.emit(health)
 	if health <= 0:
 		player_lost_all_health.emit()
+		health = 3
+	if hitter is FlyerEnemy:
+		hitter.hit()
 
 func set_up_camera_limit(rect:Rect2i):
 	print(rect)

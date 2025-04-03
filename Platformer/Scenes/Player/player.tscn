@@ -107,10 +107,11 @@ acceleration = 0.715
 jump_height = 175
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, 9.5)
+position = Vector2(1.5, -36.5)
 shape = SubResource("RectangleShape2D_jbkd8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(1.5, -46)
 sprite_frames = SubResource("SpriteFrames_dkb7f")
 animation = &"hurt"
 
@@ -132,16 +133,17 @@ one_shot = true
 unique_name_in_owner = true
 
 [node name="Hitbox" parent="." index="4"]
+position = Vector2(1.5, -46)
 collision_layer = 10
 collision_mask = 6
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2(0, 45)
+position = Vector2(-1.5, 14)
 shape = SubResource("RectangleShape2D_xvbrh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
 libraries = {
-"": SubResource("AnimationLibrary_a07yp")
+&"": SubResource("AnimationLibrary_a07yp")
 }
 
 [connection signal="timeout" from="Timers/CoyoteTimer" to="." method="_on_coyote_timer_timeout"]

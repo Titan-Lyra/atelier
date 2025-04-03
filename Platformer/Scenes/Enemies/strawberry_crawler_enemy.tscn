@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://chkxuqc8tvrla"]
+
+[ext_resource type="PackedScene" uid="uid://cwujo581smil0" path="res://Scenes/Enemies/spooky_crawler_enemy.tscn" id="1_j7wn1"]
+[ext_resource type="Texture2D" uid="uid://snlahqlhafvt" path="res://Assets/Custom/Aardbei/Vijand_lopend.png" id="2_f37ot"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f37ot"]
+atlas = ExtResource("2_f37ot")
+region = Rect2(0, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xdot"]
+atlas = ExtResource("2_f37ot")
+region = Rect2(700, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4sut"]
+atlas = ExtResource("2_f37ot")
+region = Rect2(1400, 0, 700, 700)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_shg58"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f37ot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xdot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4sut")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CrawlerEnemy" instance=ExtResource("1_j7wn1")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(10, -10)
+scale = Vector2(0.0791744, 0.0791744)
+sprite_frames = SubResource("SpriteFrames_shg58")

@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://cwujo581smil0"]
+
+[ext_resource type="PackedScene" uid="uid://b6n2e6kkf0hqu" path="res://Scenes/Enemies/crawler_enemy.tscn" id="1_l1gin"]
+[ext_resource type="Texture2D" uid="uid://c4k336043fae1" path="res://Assets/Custom/Spooky/Enemy walking.png" id="2_jiye2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq56t"]
+atlas = ExtResource("2_jiye2")
+region = Rect2(0, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veq4k"]
+atlas = ExtResource("2_jiye2")
+region = Rect2(700, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sniy"]
+atlas = ExtResource("2_jiye2")
+region = Rect2(1400, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyfle"]
+atlas = ExtResource("2_jiye2")
+region = Rect2(2100, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdaeh"]
+atlas = ExtResource("2_jiye2")
+region = Rect2(2800, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7luu"]
+atlas = ExtResource("2_jiye2")
+region = Rect2(3500, 0, 700, 700)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d8h4f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq56t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_veq4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sniy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyfle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdaeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7luu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1gin"]
+size = Vector2(30.25, 31)
+
+[node name="CrawlerEnemy" instance=ExtResource("1_l1gin")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(9, -24)
+scale = Vector2(0.124063, 0.124063)
+sprite_frames = SubResource("SpriteFrames_d8h4f")
+autoplay = "default"
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_l1gin")
